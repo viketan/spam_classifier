@@ -16,7 +16,7 @@ def init():
     global model
     # Get the path to the deployed model file and load it
     #model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'spam_model.pkl')
-    model = joblib.load('../Artifacts/model.pkl')
+    model = joblib.load('Artifacts/model.pkl')
 
 
 def preprocess(raw_data):
@@ -27,7 +27,7 @@ def preprocess(raw_data):
     msg = [lemmatizer.lemmatize(word) for word in msg if not word in set(
         stopwords.words('english'))]
     msg = ' '.join(msg)
-    corpus = pd.read_csv('../data/corpus.csv', header=None)
+    corpus = pd.read_csv('data/corpus.csv', header=None)
     corpus = corpus.values
     corpus = corpus.flatten()
     corpus = corpus.tolist()
@@ -90,4 +90,4 @@ def predict():
     return render_template('home.html', prediction_text=response['message'])
 
 
-app.run(host='0.0.0.0', port=5123, debug=True)
+app.run(host='0.0.0.1', port=5123, debug=True)
