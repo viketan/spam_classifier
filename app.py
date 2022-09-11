@@ -20,6 +20,7 @@ def init():
 
 
 def preprocess(raw_data):
+    nltk.download('punkt')
     lemmatizer = WordNetLemmatizer()
     msg = re.sub('[^a-zA-Z]', ' ', raw_data)
     msg = msg.lower()
