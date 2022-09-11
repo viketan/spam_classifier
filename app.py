@@ -21,7 +21,7 @@ def init():
 
 def preprocess(raw_data):
     nltk.download('punkt')
-    nltk.download(['stopwords', 'wordnet'])
+    nltk.download(['stopwords', 'wordnet', 'omw-1.4'])
     lemmatizer = WordNetLemmatizer()
     msg = re.sub('[^a-zA-Z]', ' ', raw_data)
     msg = msg.lower()
