@@ -90,4 +90,4 @@ def predict():
     return render_template('home.html', prediction_text=response['message'])
 
 
-app.run(debug=True)
+app.run(host='0.0.0.0', port=5123, debug=True)
