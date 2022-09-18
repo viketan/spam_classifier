@@ -1,8 +1,6 @@
-@import url("");
-
 body {
   font-family: 'Roboto', Courier, monospace;
-  background-image: url("./code_bg.png");
+  background-image: url(../img/code_bg.png);
   height: 90vh;
   display: flex;
   align-items: center;

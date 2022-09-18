@@ -64,7 +64,7 @@ predicted_classes = json.loads(predictions)
 print(predicted_classes[0])
 '''
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 
 node_addr = str(uuid4()).replace('-', '')
 
