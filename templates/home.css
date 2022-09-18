@@ -1,0 +1,69 @@
+@import url("");
+
+body {
+  font-family: 'Roboto', Courier, monospace;
+  background-image: url("./code_bg.png");
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #4B4B4B;
+  outline: none;
+  background: #FFFFFF;
+  border: 1px solid #949494;
+  border-radius: 0.625rem;
+}
+
+button {
+  margin-top: 2rem;
+  background: #FF4148;
+  border-radius: 0.625rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  padding: 0.625rem 3rem;
+  cursor: pointer;
+}
+
+p {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.container {
+  width: 90vw;
+  max-width: 50rem;
+}
+
+.spam {
+  color: #FF0000;
+}
+
+.not_a_spam {
+  color: #23FF2C;
+  text-shadow: 2px 0px 0px rgba(255, 255, 255, 0.51);
+}
+
+.message {
+  color: #FFFFFF;
+}
