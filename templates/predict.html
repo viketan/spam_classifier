@@ -49,9 +49,16 @@
       <br />
       <br />
       <p class="message">{{ value['message']}}</p>
-      <p class="spam">{{ value['result'] }}</p>
-      
+      <p id="result">{{ value['result'] }}</p>
     </div>
+    <script>
+        const result = document.getElementById("result");
+        const spam = "{{ value['result']}}";
+        if(spam === "NOT a spam") {
+            result.classList.add("not_a_spam");
+        } else {
+            result.classList.add("spam");
+        }
+    </script>
   </body
-
 </html>
