@@ -7,7 +7,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 import pandas as pd
 import json
 import numpy as np
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from uuid import uuid4
 # Called when the service is loaded
 
@@ -47,7 +47,7 @@ def run(raw_data):
     preprocessed_data = preprocess(raw_data)
     predictions = model.predict(preprocessed_data[-1])
     # Get the corresponding classname for each prediction (0 or 1)
-    classnames = ['NOT spam', 'spam']
+    classnames = ['NOT a spam', 'spam']
     predicted_classes = []
     for prediction in predictions:
         predicted_classes.append(classnames[prediction])
@@ -64,7 +64,7 @@ predicted_classes = json.loads(predictions)
 print(predicted_classes[0])
 '''
 
-app = Flask(__name__,static_url_path='/static')
+app = Flask(__name__, static_url_path='/static')
 
 node_addr = str(uuid4()).replace('-', '')
 
@@ -88,8 +88,9 @@ def predict():
     init()
     predictions = run(sms)
     predicted_classes = json.loads(predictions)
-    response = {'message': "This SMS is "+predicted_classes[0]}
-    return render_template('home.html', prediction_text=response['message'])
+    response = {'result': predicted_classes[0],
+                'message': sms}
+    return render_template('predict.html', value=response)
 
 
 if __name__ == "__main__":

@@ -7,6 +7,12 @@ body {
   justify-content: center;
 }
 
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  color: red;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -55,6 +61,7 @@ p {
 
 .spam {
   color: #FF0000;
+  text-shadow: 2px 0px 0px rgba(255, 255, 255, 0.51);
 }
 
 .not_a_spam {
@@ -63,5 +70,6 @@ p {
 }
 
 .message {
-  color: #FFFFFF;
+  color: white;
+  text-shadow: 2px 0px 0px rgba(23, 23, 23, 0);
 }
